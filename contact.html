@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <div id="contact-container">
+        <img id="logo" src="./css/logo.png" alt="">
+        <form action="https://api.web3forms.com/submit" method="POST" id="contact-left">
+            <div id="contact-left-title">
+                <h2>Get In Touch!!!</h2>
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="e4cbce82-7656-44aa-8e69-3aa76e5d40ae">
+            <input type="text"  placeholder="Your Name" required class="contact-inputs">
+            <input type="email"  placeholder="Your Email" required class="contact-inputs">
+            <textarea name="message" placeholder="Mental Health Issues You Are Currently Facing...." class="contact-inputs"></textarea>
+            <button type="submit">Submit <img src="./css/arrow_icon.png" alt=""></button>
+        </form>
+
+        <div id="contact-right">
+            <img src="./css/right_img.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
