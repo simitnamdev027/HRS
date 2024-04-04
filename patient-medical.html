@@ -1,0 +1,215 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Medical History</title>
+    <link rel="stylesheet" href="css/patients-medical.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Patient Medical History</h1>
+        <div class="personal-details">
+            <h2>Personal Details</h2>
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Date of Birth:</strong> January 1, 1980</p>
+            <p><strong>Gender:</strong> Male</p>
+            <p><strong>Contact Number:</strong> +1 123-456-7890</p>
+            <p><strong>Email:</strong> johndoe@example.com</p>
+        </div>
+        <div class="medical-history">
+            <h2>Medical History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Disease</th>
+                        <th>Treatment</th>
+                        <th>Doctor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-01-15</td>
+                        <td>Fever</td>
+                        <td>Antibiotics</td>
+                        <td>Dr. Smith</td>
+                    </tr>
+                    <tr>
+                        <td>2023-03-10</td>
+                        <td>Allergy</td>
+                        <td>Antihistamines</td>
+                        <td>Dr. Johnson</td>
+                    </tr>
+                    <tr>
+                        <td>2023-05-22</td>
+                        <td>Headache</td>
+                        <td>Painkillers</td>
+                        <td>Dr. Williams</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <button class="btn" onclick="printMedicalHistory()">Print Medical History</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Medical History</title>
+    <link rel="stylesheet" href="css/patients-medical.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Patient Medical History</h1>
+        <div class="personal-details">
+            <h2>Personal Details</h2>
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Date of Birth:</strong> January 1, 1980</p>
+            <p><strong>Gender:</strong> Male</p>
+            <p><strong>Contact Number:</strong> +1 123-456-7890</p>
+            <p><strong>Email:</strong> johndoe@example.com</p>
+        </div>
+        <div class="medical-history">
+            <h2>Medical History</h2>
+            <table id="medicalTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Disease</th>
+                        <th>Treatment</th>
+                        <th>Doctor</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023-01-15</td>
+                        <td>Fever</td>
+                        <td>Antibiotics</td>
+                        <td>Dr. Smith</td>
+                        <td><button class="view-btn" onclick="viewDetails('2023-01-15', 'Fever', 'Antibiotics', 'Dr. Smith')">View Details</button></td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                    <tr>
+                        <td>2023-01-15</td>
+                        <td>Fever</td>
+                        <td>Antibiotics</td>
+                        <td>Dr. Smith</td>
+                        <td><button class="view-btn" onclick="viewDetails('2023-01-15', 'Fever', 'Antibiotics', 'Dr. Smith')">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>2023-03-10</td>
+                        <td>Allergy</td>
+                        <td>Antihistamines</td>
+                        <td>Dr. Johnson</td>
+                        <td><button class="view-btn" onclick="viewDetails('2023-03-10', 'Allergy', 'Antihistamines', 'Dr. Johnson')">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>2023-05-22</td>
+                        <td>Headache</td>
+                        <td>Painkillers</td>
+                        <td>Dr. Williams</td>
+                        <td><button class="view-btn" onclick="viewDetails('2023-05-22', 'Headache', 'Painkillers', 'Dr. Williams')">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>2023-08-05</td>
+                        <td>Stomachache</td>
+                        <td>Antacids</td>
+                        <td>Dr. Brown</td>
+                        <td><button class="view-btn" onclick="viewDetails('2023-08-05', 'Stomachache', 'Antacids', 'Dr. Brown')">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>2023-09-17</td>
+                        <td>Cold</td>
+                        <td>Decongestants</td>
+                        <td>Dr. Lee</td>
+                        <td><button class="view-btn" onclick="viewDetails('2023-09-17', 'Cold', 'Decongestants', 'Dr. Lee')">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>2023-11-12</td>
+                        <td>Back Pain</td>
+                        <td>Physical Therapy</td>
+                        <td>Dr. Anderson</td>
+                        <td><button class="view-btn" onclick="viewDetails('2023-11-12', 'Back Pain', 'Physical Therapy', 'Dr. Anderson')">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>2024-01-08</td>
+                        <td>Diabetes</td>
+                        <td>Insulin</td>
+                        <td>Dr. Martinez</td>
+                        <td><button class="view-btn" onclick="viewDetails('2024-01-08', 'Diabetes', 'Insulin', 'Dr. Martinez')">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>2024-03-15</td>
+                        <td>Anxiety</td>
+                        <td>Therapy</td>
+                        <td>Dr. Adams</td>
+                        <td><button class="view-btn" onclick="viewDetails('2024-03-15', 'Anxiety', 'Therapy', 'Dr. Adams')">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>2024-04-22</td>
+                        <td>High Blood Pressure</td>
+                        <td>Medication</td>
+                        <td>Dr. Garcia</td>
+                        <td><button class="view-btn" onclick="viewDetails('2024-04-22', 'High Blood Pressure', 'Medication', 'Dr. Garcia')">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>2024-05-30</td>
+                        <td>Arthritis</td>
+                        <td>Pain Relief</td>
+                        <td>Dr. Nguyen</td>
+                        <td><button class="view-btn" onclick="viewDetails('2024-05-30', 'Arthritis', 'Pain Relief', 'Dr. Nguyen')">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>2024-06-25</td>
+                        <td>Migraine</td>
+                        <td>Migraine Medication</td>
+                        <td>Dr. Rivera</td>
+                        <td><button class="view-btn" onclick="viewDetails('2024-06-25', 'Migraine', 'Migraine Medication', 'Dr. Rivera')">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>2024-07-10</td>
+                        <td>Depression</td>
+                        <td>Antidepressants</td>
+                        <td>Dr. Clark</td>
+                        <td><button class="view-btn" onclick="viewDetails('2024-07-10', 'Depression', 'Antidepressants', 'Dr. Clark')">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>2024-08-18</td>
+                        <td>Skin Rash</td>
+                        <td>Topical Cream</td>
+                        <td>Dr. Cooper</td>
+                        <td><button class="view-btn" onclick="viewDetails('2024-08-18', 'Skin Rash', 'Topical Cream', 'Dr. Cooper')">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>2024-09-05</td>
+                        <td>Asthma</td>
+                        <td>Inhaler</td>
+                        <td>Dr. Perez</td>
+                        <td><button class="view-btn" onclick="viewDetails('2024-09-05', 'Asthma', 'Inhaler', 'Dr. Perez')">View Details</button></td>
+                    </tr>
+                    <tr>
+                        <td>2024-10-12</td>
+                        <td>Insomnia</td>
+                        <td>Sleep Medication</td>
+                        <td>Dr. Mitchell</td>
+                        <td><button class="view-btn" onclick="viewDetails('2024-10-12', 'Insomnia', 'Sleep Medication', 'Dr. Mitchell')">View Details</button></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+        </div>
+        <button class="btn" onclick="printMedicalHistory()">Print Medical History</button>
+    </div>
+        </div>
+    </div>
+    <script src="patients-medical.js"></script>
+</body>
+</html>
